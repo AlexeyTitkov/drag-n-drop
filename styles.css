@@ -18,6 +18,7 @@ body {
   display: flex;
   width: 600px;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
@@ -35,13 +36,25 @@ body {
   border: 1px solid #eee;
   box-shadow: 4px 4px 9px rgba(28, 28, 28, 0.36);
   border-radius: 20px;
-  background: #f7f6f7;
+  background: #e1e1e1;
   padding: 0.8rem 1rem;
-  color: #828282;
+  color: #6b6b6b;
   text-align: center;
   cursor: grab;
   display: flex;
   align-items: center;
+  opacity: 0;
+  animation: appear 0.3s ease-in-out forwards;
+  transition: background 0.3s ease-in-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .item:active {
@@ -51,6 +64,8 @@ body {
 .placeholder {
   width: 150px;
   height: 66px;
+  border-radius: 20px;
+  transition: border 0.2s ease-in-out;
 }
 
 .start {
@@ -64,3 +79,20 @@ body {
 .done {
   background: linear-gradient(90deg, #3a7a52 0%, #78a5bb 100%);
 }
+
+.hold {
+  background: linear-gradient(0deg, rgba(72, 76, 215, 0.5) 0%, rgba(76, 77, 140, 0.62) 100%);
+}
+
+.hide {
+  display: none;
+}
+
+.hovered {
+  border: 2px dashed blueviolet;
+}
+
+.bordered {
+  border: 2px dashed #626262;
+}
+
